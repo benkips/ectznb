@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.Contacts">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#fff"
+        android:padding="@dimen/_5sdp">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#111"
+            android:textSize="@dimen/_18sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:text="Connect with us:"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Call us"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="#111"
+            android:layout_margin="@dimen/_5sdp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+254 780 206 206"
+            android:textColor="#3498db"
+            android:textSize="@dimen/_18sdp"
+            android:layout_margin="@dimen/_5sdp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email us"
+            android:textSize="@dimen/_15sdp"
+            android:textColor="#111"
+            android:layout_margin="@dimen/_5sdp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="support@ecitizen.go.ke"
+            android:textColor="#3498db"
+            android:textSize="@dimen/_18sdp"
+            android:layout_margin="@dimen/_5sdp"/>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

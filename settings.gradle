@@ -1,0 +1,3 @@
+rootProject.name = "E-citizen"
+include ':app'
+//include ':nativetemplate'

@@ -59,8 +59,17 @@ class wvinfo : Fragment(R.layout.fragment_wvinfo) {
         if (binding.wvvs!=null) {
             val url= arguments?.getString("web")
             binding.wvvs.settings.javaScriptEnabled = true
+            if (android.os.Build.VERSION.SDK_INT >= 21) {
+                CookieManager.getInstance().setAcceptThirdPartyCookies(binding.wvvs, true);
+            } else {
+                CookieManager.getInstance().setAcceptCookie(true);
+            }
             binding.wvvs.webViewClient = WebViewClient()
             binding.wvvs.webChromeClient = WebChromeClient()
+            binding.wvvs.settings.apply {
+                domStorageEnabled=true
+                databaseEnabled=true
+            }
             if (url != null) {
                 binding.wvvs.loadUrl(url)
             }

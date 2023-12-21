@@ -27,7 +27,7 @@
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="@dimen/_200sdp"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/ecitizen" />
+                app:srcCompat="@drawable/ecitizentwo" />
         </LinearLayout>
 
         <LinearLayout
@@ -41,14 +41,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="E-citizen"
+                android:text="All eServices"
                 android:textColor="#111"
                 android:textSize="@dimen/_30sdp" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="mobile app"
+                android:text="App"
                 android:textColor="#111"
                 android:textSize="@dimen/_15sdp" />
 

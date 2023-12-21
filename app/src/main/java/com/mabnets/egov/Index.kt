@@ -82,19 +82,21 @@ class Index : AppCompatActivity() {
         requestPermissionLauncher =
             registerForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
                 if (!granted) {
-                    Toast.makeText(this, "Storage Permission NOT Granted", Toast.LENGTH_SHORT).show()
-                    requestStoragePermission()
+                    //Toast.makeText(this, "Storage Permission NOT Granted", Toast.LENGTH_SHORT).show()
+//                    requestStoragePermission()
                 }
             }
         requestStoragePermission()
-
     }
     //asking for permission
     private fun requestStoragePermission(){
         when {
             ContextCompat.checkSelfPermission(
                 this,
-                android.Manifest.permission.WRITE_EXTERNAL_STORAGE
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+                    android.Manifest.permission.READ_MEDIA_IMAGES
+                else
+                    android.Manifest.permission.READ_EXTERNAL_STORAGE
             ) == PackageManager.PERMISSION_GRANTED -> {
                 // The permission is granted
                 // you can go with the flow that requires permission here

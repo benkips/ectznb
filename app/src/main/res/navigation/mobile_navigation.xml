@@ -18,8 +18,8 @@
     <fragment
         android:id="@+id/homescreen"
         android:name="com.mabnets.egov.fragments.Home"
-        android:label="E-citizen"
-        tools:layout="@layout/fragment_home" >
+        android:label="All eServices"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homescreen_to_eservices"
             app:destination="@id/eservices" />
@@ -35,8 +35,8 @@
     <fragment
         android:id="@+id/eservices"
         android:name="com.mabnets.egov.fragments.Eservices"
-        android:label="E-citizen services"
-        tools:layout="@layout/fragment_eservices" >
+        android:label="All eServices"
+        tools:layout="@layout/fragment_eservices">
         <action
             android:id="@+id/action_eservices_to_wvinfo"
             app:destination="@id/wvinfo" />

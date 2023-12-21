@@ -15,7 +15,7 @@ android {
         applicationId "com.mabnets.egov"
         minSdkVersion 21
         targetSdk 33
-        versionCode 17
+        versionCode 22
         versionName "1.0"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true

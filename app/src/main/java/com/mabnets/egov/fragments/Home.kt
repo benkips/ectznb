@@ -50,15 +50,15 @@ class Home : Fragment(R.layout.fragment_home) {
         binding.bannerContainertwo.addView(adView)
         adView.adUnitId ="ca-app-pub-4814079884774543/6138421725"
 
-        adView.setAdSize(AdSize.BANNER)
+      /*  adView.setAdSize(AdSize.BANNER)
         val adRequest = AdRequest
             .Builder()
             .build()
         // Start loading the ad in the background.
-        adView.loadAd(adRequest)
+        adView.loadAd(adRequest)*/
 
     }
-    private val adSize: AdSize
+     private val adSize: AdSize
         get() {
             val display =activity?.windowManager!!.defaultDisplay
             val outMetrics = DisplayMetrics()

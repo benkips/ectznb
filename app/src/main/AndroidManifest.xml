@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mabnets.egov">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -8,7 +7,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
     <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+   <!-- <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />-->
 
 
     <application
@@ -22,7 +21,7 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".Index"
-            android:label="All eServices"
+            android:label="@string/app_name"
             android:theme="@style/Theme.Ecitizen.NoActionBar"
             android:windowSoftInputMode="adjustPan"
             android:exported="true">
@@ -36,6 +35,12 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-4814079884774543~8656773855" />
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION"
+            android:value="true"/>
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING"
+            android:value="true"/>
     </application>
 
 </manifest>

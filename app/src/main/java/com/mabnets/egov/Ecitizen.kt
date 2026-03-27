@@ -8,12 +8,15 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.OnLifecycleEvent
 import androidx.lifecycle.ProcessLifecycleOwner
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.appopen.AppOpenAd
 import dagger.hilt.android.HiltAndroidApp
+import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.*
+import javax.inject.Inject
 
 
 private const val AD_UNIT_ID = "ca-app-pub-4814079884774543/2747539225"
@@ -24,6 +27,9 @@ class Ecitizen:Application(), Application.ActivityLifecycleCallbacks, LifecycleO
 
     private lateinit var appOpenAdManager: AppOpenAdManager
     private var currentActivity: Activity? = null
+    @Inject
+    @ApplicationContext
+    lateinit var context: Context
 
     override fun onCreate() {
         super.onCreate()
@@ -114,7 +120,6 @@ class Ecitizen:Application(), Application.ActivityLifecycleCallbacks, LifecycleO
                 context,
                 AD_UNIT_ID,
                 request,
-                AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
                 object : AppOpenAd.AppOpenAdLoadCallback() {
                     /**
                      * Called when an app open ad has loaded.
@@ -126,7 +131,8 @@ class Ecitizen:Application(), Application.ActivityLifecycleCallbacks, LifecycleO
                         isLoadingAd = false
                         loadTime = Date().time
                         Log.d(LOG_TAG, "onAdLoaded.")
-                       // Toast.makeText(context, "onAdLoaded", Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(context, "onAdLoaded", Toast.LENGTH_SHORT).show()
+                        //Log.d(LOG_TAG, "onAdLoaded" + MobileAds.getVersionString())
                     }
 
                     /**
@@ -137,7 +143,8 @@ class Ecitizen:Application(), Application.ActivityLifecycleCallbacks, LifecycleO
                     override fun onAdFailedToLoad(loadAdError: LoadAdError) {
                         isLoadingAd = false
                         Log.d(LOG_TAG, "onAdFailedToLoad: " + loadAdError.message)
-                        //Toast.makeText(context, "onAdFailedToLoad", Toast.LENGTH_SHORT).show()
+                        // Toast.makeText(context, "onAdFailedToLoad", Toast.LENGTH_SHORT).show()
+
                     }
                 }
             )
@@ -205,7 +212,7 @@ class Ecitizen:Application(), Application.ActivityLifecycleCallbacks, LifecycleO
                         appOpenAd = null
                         isShowingAd = false
                         Log.d(LOG_TAG, "onAdDismissedFullScreenContent.")
-                       // Toast.makeText(activity, "onAdDismissedFullScreenContent", Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(activity, "onAdDismissedFullScreenContent", Toast.LENGTH_SHORT).show()
 
                         onShowAdCompleteListener.onShowAdComplete()
                         loadAd(activity)

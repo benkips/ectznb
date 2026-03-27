@@ -1,11 +1,15 @@
 package com.mabnets.egov
 
+import android.content.Context
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
@@ -19,6 +23,10 @@ import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.GravityCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import androidx.navigation.ui.*
 import com.mabnets.egov.Util.showPermissionRequestExplanation
 import com.mabnets.egov.databinding.ActivityIndexBinding
@@ -34,12 +42,18 @@ class Index : AppCompatActivity() {
     private lateinit var binding: ActivityIndexBinding
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<String>
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         installSplashScreen()
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         binding = ActivityIndexBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val toolbar: Toolbar = findViewById(R.id.toolbar)
+
+
+
         setSupportActionBar(toolbar)
 
 

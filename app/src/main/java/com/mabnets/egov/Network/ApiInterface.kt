@@ -11,4 +11,5 @@ interface ApiInterface {
     @GET("allservices")
     suspend  fun geturls(): List<Mydata>
 
+
 }

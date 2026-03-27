@@ -27,10 +27,10 @@
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="@dimen/_200sdp"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/ecitizentwo" />
+                app:srcCompat="@drawable/ecitizenthree" />
         </LinearLayout>
 
-        <LinearLayout
+        <!--<LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -41,7 +41,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="All eServices"
+                android:text="Ecitizen Services"
                 android:textColor="#111"
                 android:textSize="@dimen/_30sdp" />
             <TextView
@@ -52,7 +52,7 @@
                 android:textColor="#111"
                 android:textSize="@dimen/_15sdp" />
 
-        </LinearLayout>
+        </LinearLayout>-->
 
 
     </LinearLayout>
